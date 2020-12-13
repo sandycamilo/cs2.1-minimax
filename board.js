@@ -1,4 +1,4 @@
-const statusDisplay = document.querySelector('.game--status');
+const statusDisplay = document.querySelector('.status');
 const winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
@@ -71,8 +71,8 @@ function handleRestartGame() {
   gameState = ["", "", "", "", "", "", "", "", ""];
   statusDisplay.innerHTML = currentPlayerTurn();
   document.querySelectorAll('.cell')
-      .forEach(cell => cell.innerHTML = "");
+               .forEach(cell => cell.innerHTML = "");
 }
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
-document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
+document.querySelector('.restart').addEventListener('click', handleRestartGame);
